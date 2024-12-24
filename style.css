@@ -1,0 +1,23 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: grid;
+    grid-template: min-content 1fr / 1fr;
+    height: 100vh;
+}
+
+header {
+    padding: 20px;
+    color: white;
+    background-color: blue;
+}
+
+main {
+    padding: 20px;
+    background-color: slategray;
+    box-shadow: inset 0 5px 5px rgba(0, 0, 0, 0.2);
+}
