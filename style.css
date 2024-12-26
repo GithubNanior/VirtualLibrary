@@ -35,6 +35,9 @@ main {
     height: 360px;
 
     --angle: 0;
+    --color: brown;
+    --border-color: black;
+    --border-width: 5px;
 }
 
 .book:hover {
@@ -51,8 +54,8 @@ main {
 
     border-left: solid black 10px;
     border-radius: 0 10px 10px 0;
-    background-color: brown;
-    box-shadow: inset black 0 0 10px;
+    background-color: var(--color);
+    box-shadow: inset var(--border-color) 0 0 var(--border-width);
 
     transition-property: var(--angle);
     transition-duration: 2s;
@@ -68,8 +71,8 @@ main {
 
     border-right: solid black 10px;
     border-radius: 10px 0 0 10px;
-    background-color: brown;
-    box-shadow: inset black 0 0 10px;
+    background-color: var(--color);
+    box-shadow: inset var(--border-color) 0 0 var(--border-width);
 
     transition-property: var(--angle);
     transition-duration: 2s;
@@ -84,8 +87,8 @@ main {
     
     border-left: solid black 10px;
     border-right: solid black 10px;
-    background-color: brown;
-    box-shadow: inset black 0 0 10px;
+    background-color: var(--color);
+    box-shadow: inset var(--border-color) 0 0 var(--border-width);
 
     transition-property: var(--angle);
     transition-duration: 2s;
