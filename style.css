@@ -43,7 +43,7 @@ main {
     --border-width: 5px;
 
     transition-property: scale;
-    transition-duration: 2s;
+    transition-duration: 1s;
 }
 
 .book:hover {
@@ -65,7 +65,7 @@ main {
     box-shadow: inset var(--border-color) 0 0 var(--border-width);
 
     transition-property: var(--angle);
-    transition-duration: 2s;
+    transition-duration: 1s;
 }
 
 .book .back {
@@ -82,7 +82,7 @@ main {
     box-shadow: inset var(--border-color) 0 0 var(--border-width);
 
     transition-property: var(--angle);
-    transition-duration: 2s;
+    transition-duration: 1s;
 }
 
 .book .ridge {
@@ -98,5 +98,5 @@ main {
     box-shadow: inset var(--border-color) 0 0 var(--border-width);
 
     transition-property: var(--angle);
-    transition-duration: 2s;
+    transition-duration: 1s;
 }
