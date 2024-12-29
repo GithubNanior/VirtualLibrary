@@ -35,9 +35,9 @@ main {
     height: var(--height);
 
     --angle: 0;
-    --width: 280px;
+    --width: 253px;
     --height: 360px;
-    --thickness: 4em;
+    --thickness: 32px;
     --color: brown;
     --border-color: black;
     --border-width: 5px;
@@ -59,10 +59,13 @@ main {
     transform: rotateY(calc(var(--angle) * 180deg)) translateZ(calc(var(--thickness) / 2));
     z-index: calc(100 - var(--angle) * 100);
 
-    border-left: solid black 10px;
+    /* border-left: solid black 10px;
     border-radius: 0 10px 10px 0;
     background-color: var(--color);
-    box-shadow: inset var(--border-color) 0 0 var(--border-width);
+    box-shadow: inset var(--border-color) 0 0 var(--border-width); */
+
+    background-image: url("https://media.discordapp.net/attachments/677447103361974292/1322923097774489631/cover.png?ex=6772a3a5&is=67715225&hm=4b25f29ce47c16c997104b547453a121f4a07c24e47841b3d5d60301d30d975b&=&format=webp&quality=lossless&width=567&height=805");
+    background-size: cover;
 
     transition-property: var(--angle);
     transition-duration: 1s;
@@ -76,10 +79,13 @@ main {
     transform: rotateY(calc(var(--angle) * 180deg - 180deg)) translateZ(calc(var(--thickness) / 2));
     z-index: calc(var(--angle) * 100);
 
-    border-right: solid black 10px;
+    /* border-right: solid black 10px;
     border-radius: 10px 0 0 10px;
     background-color: var(--color);
-    box-shadow: inset var(--border-color) 0 0 var(--border-width);
+    box-shadow: inset var(--border-color) 0 0 var(--border-width); */
+
+    background-image: url("https://media.discordapp.net/attachments/677447103361974292/1322923097312985118/back.png?ex=6772a3a5&is=67715225&hm=7ee2c36fde44170a50704b05031a45ba0d0e4b803dcc099198e2ac49dd3ded0a&=&format=webp&quality=lossless&width=567&height=805");
+    background-size: cover;
 
     transition-property: var(--angle);
     transition-duration: 1s;
@@ -92,10 +98,13 @@ main {
     transform: translateX(calc(var(--width) / 2 - var(--thickness) / 2)) rotateY(calc(var(--angle) * 180deg - 90deg)) translateZ(calc(var(--width) / 2));
     z-index: 50;
     
-    border-left: solid black 10px;
+    /* border-left: solid black 10px;
     border-right: solid black 10px;
     background-color: var(--color);
-    box-shadow: inset var(--border-color) 0 0 var(--border-width);
+    box-shadow: inset var(--border-color) 0 0 var(--border-width); */
+
+    background-image: url("https://media.discordapp.net/attachments/677447103361974292/1322923098189856859/spine.png?ex=6772a3a5&is=67715225&hm=3502abdfe0e0d9cabbd538fde12eb9a0527e9521103272363570e64cf0fb0617&=&format=webp&quality=lossless&width=72&height=805");
+    background-size: cover;
 
     transition-property: var(--angle);
     transition-duration: 1s;
