@@ -85,7 +85,7 @@ main {
     transition-duration: 1s;
 }
 
-.book .ridge {
+.book .spine {
     position: absolute;
     width: calc(var(--thickness));
     height: 100%;

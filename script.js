@@ -50,7 +50,7 @@ function addBookElement(title, summary)
     book.innerHTML = `
     <div class="cover"><h2></h2></div>
     <div class="back"></div>
-    <div class="ridge"></div>
+    <div class="spine"></div>
     `
 
     book.querySelector(".cover > h2").textContent = title;
