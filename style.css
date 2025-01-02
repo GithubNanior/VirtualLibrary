@@ -6,14 +6,38 @@
 
 body {
     display: grid;
-    grid-template: min-content 1fr / 1fr;
+    grid-template: min-content min-content 1fr / 1fr;
     height: 100vh;
 }
 
 header {
-    padding: 20px;
+    padding: 20px 40px;
     color: white;
     background-color: blue;
+}
+
+.actions {
+    background-color:rgb(0, 132, 255);
+    padding: 0 20px;
+}
+
+button {
+    margin: 0;
+    padding: 10px;
+
+    border: none;
+    background-color:rgb(0, 132, 255);
+
+    font-size: large;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: background-color 0.1s;
+}
+
+button:hover {
+    background-color: white;
 }
 
 main {
