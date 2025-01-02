@@ -54,7 +54,13 @@ function addBookElement(title, summary)
     `
 
     book.querySelector(".cover > h2").textContent = title;
-    book.querySelector(".back").textContent = summary;
+
+    let back = book.querySelector(".back");
+    let lines = summary.split("<br>");
+    for (let i = 0; i < lines.length; i++) {
+        back.appendChild(document.createTextNode(lines[i]));
+        back.appendChild(document.createElement("br"));
+    }
 
     bookContainer.appendChild(book);
 }
