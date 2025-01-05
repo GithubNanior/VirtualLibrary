@@ -157,6 +157,7 @@ addBook(
 let addBookForm = document.querySelector("#add-book-form");
 let bookTitleField = addBookForm.querySelector("#title");
 let bookSummaryField = addBookForm.querySelector("#summary");
+let bookErrorField = addBookForm.querySelector("#error");
 
 let addBookButton = document.querySelector("#add-book");
 let cancelAddBookButton = document.querySelector("#cancel-add-book");
@@ -164,6 +165,7 @@ let cancelAddBookButton = document.querySelector("#cancel-add-book");
 addBookButton.addEventListener("click", (event)=>{
     bookTitleField.value = "";
     bookSummaryField.value = "";
+    bookErrorField.textContent = "";
 
     addBookForm.classList.remove("hidden");
 });
@@ -175,10 +177,17 @@ cancelAddBookButton.addEventListener("click", (event)=>{
 addBookForm.addEventListener("submit", (event)=>{
     event.preventDefault();
 
-    addBook(
+    let output = addBook(
         bookTitleField.value, 
         bookSummaryField.value
     );
 
-    addBookForm.classList.add("hidden");
+    if (output === undefined)
+    {
+        addBookForm.classList.add("hidden");
+    }
+    else
+    {
+        bookErrorField.textContent = output;
+    }
 })

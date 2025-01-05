@@ -188,6 +188,20 @@ form {
     grid-column: 1 / span 2;
 }
 
+.error-field {
+    grid-column: 1 / span 2;
+
+    padding: 10px;
+    
+    border-radius: 5px;
+    border: solid black 1px;
+    background-color: rgba(255, 0, 0, 0.2);
+}
+
+.error-field:empty {
+    display: none;
+}
+
 .form-actions {
     text-align: center;
     grid-column: 1 / span 2;
