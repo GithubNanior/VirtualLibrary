@@ -4,10 +4,16 @@
     padding: 0;
 }
 
-body {
+.container {
     display: grid;
     grid-template: min-content min-content 1fr / 1fr;
     height: 100vh;
+
+    transition: filter 0.2s;
+}
+
+body:has(.modal:not(.hidden)) > .container {
+    filter: brightness(0.5);
 }
 
 header {
@@ -37,7 +43,7 @@ button {
 }
 
 button:hover {
-    background-color: white;
+    background-color: rgb(125, 192, 255);
 }
 
 main {
@@ -123,4 +129,79 @@ main {
 
     transition-property: var(--angle);
     transition-duration: 1s;
+}
+
+.modal {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    z-index: 200;
+
+    opacity: 1;
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+.modal.hidden {
+    opacity: 0;
+    transform: translate(-50%, -150%);
+}
+
+form {
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px;
+
+    display: grid;
+    grid-template-columns: min-content min-content;
+    gap: 15px 5px;
+}
+
+.form-title {
+    text-align: center;
+    grid-column: 1 / span 2;
+}
+
+.form-actions {
+    text-align: center;
+    grid-column: 1 / span 2;
+
+    display: grid;
+    grid-template: min-content / repeat(auto-fit, minmax(10px, 1fr));
+    gap: 10px;
+}
+
+label {
+    text-align: right;
+    padding: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+textarea {
+    padding: 5px;
+    border-radius: 5px;
+    border: black solid 1px;
+    box-shadow: 0 2px 3px inset rgba(0, 0, 0, 0.1);
+}
+
+input[type="button"],
+input[type="submit"] {
+    padding: 5px;
+
+    cursor: pointer;
+
+    border-radius: 5px;
+    border: black solid 1px;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+    background-color: rgb(79, 170, 255);
+
+    color: white;
+    font-weight: bold;
+}
+
+input[type="button"]:hover,
+input[type="submit"]:hover {
+    background-color: rgb(125, 192, 255);
 }
