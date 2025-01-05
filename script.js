@@ -48,14 +48,22 @@ function addBookElement(title, summary)
     book.setAttribute("bookTitle", title);
 
     book.innerHTML = `
-    <div class="cover"><h2></h2></div>
-    <div class="back"></div>
+    <div class="cover">
+        <h2></h2>
+    </div>
+    <div class="back">
+        <p></p>
+        <div class="book-actions">
+            <button><img src="images/view.svg" alt="View"></button>
+            <button><img src="images/delete.svg" alt="Remove"></button>
+        </div>
+    </div>
     <div class="spine"></div>
     `
 
     book.querySelector(".cover > h2").textContent = title;
 
-    let back = book.querySelector(".back");
+    let back = book.querySelector(".back > p");
     let lines = summary.split("\n");
     let i = 0;
     for (; i < lines.length; i++)
@@ -70,7 +78,7 @@ function addBookElement(title, summary)
         back.appendChild(document.createElement("br"));
     }
 
-    bookContainer.appendChild(book);
+    bookContainer.prepend(book);
 }
 
 function removeBookElement(title)

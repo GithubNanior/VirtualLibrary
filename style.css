@@ -27,7 +27,7 @@ header {
     padding: 0 20px;
 }
 
-button {
+.actions button {
     margin: 0;
     padding: 10px;
 
@@ -42,7 +42,7 @@ button {
     transition: background-color 0.1s;
 }
 
-button:hover {
+.actions button:hover {
     background-color: rgb(125, 192, 255);
 }
 
@@ -57,6 +57,32 @@ main {
 
     background-color: slategray;
     box-shadow: inset 0 5px 5px rgba(0, 0, 0, 0.2);
+
+    --width: 253px;
+    --height: 360px;
+}
+
+.book-button {
+    width: var(--width);
+    height: var(--height);
+    
+    border-radius: 10px;
+    border: white dashed 4px;
+    background-color: rgba(255, 255, 255, 0.1);
+
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+    transition: background-color 0.1s, scale 0.3s;
+}
+
+.book-button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    scale: 1.05;
 }
 
 .book {
@@ -65,8 +91,6 @@ main {
     height: var(--height);
 
     --angle: 0;
-    --width: 253px;
-    --height: 360px;
     --thickness: 32px;
     --color: brown;
     --border-color: black;
@@ -99,6 +123,10 @@ main {
 }
 
 .book .back {
+    display: grid;
+    grid-template-rows: 1fr min-content;
+    gap: 10px;
+
     position: absolute;
     padding: 20px;
     width: 100%;
@@ -113,6 +141,27 @@ main {
 
     transition-property: var(--angle);
     transition-duration: 1s;
+}
+
+.back p {
+    overflow: auto;
+}
+
+.book-actions {
+    display: flex;
+    justify-content: right;
+    gap: 10px;
+}
+
+.book-actions button {
+    background-color: transparent;
+    border: none;
+    width: 32px;
+    height: 32px;
+}
+
+.book-actions button:hover {
+    opacity: 0.75;
 }
 
 .book .spine {
@@ -144,6 +193,7 @@ main {
 }
 
 .modal.hidden {
+    display: none;
     opacity: 0;
     transform: translate(-50%, -150%);
 }
