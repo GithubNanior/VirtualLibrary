@@ -63,6 +63,10 @@ function addBookElement(title, summary)
 
     book.querySelector(".cover > h2").textContent = title;
 
+    book.querySelector("button:has(img[alt='Remove'])").addEventListener("click", ()=>{
+        removeBook(title);
+    });
+
     let back = book.querySelector(".back > p");
     let lines = summary.split("\n");
     let i = 0;
@@ -139,3 +143,32 @@ addBook(
     There was once, a court jester, who farted songs from his behind. The jester had some real mad skills, and this story has some real weird truths, open this book to find out who, and where this old fart stunk the court!
     `
 );
+
+let addBookForm = document.querySelector("#add-book-form");
+let bookTitleField = addBookForm.querySelector("#title");
+let bookSummaryField = addBookForm.querySelector("#summary");
+
+let addBookButton = document.querySelector("#add-book");
+let cancelAddBookButton = document.querySelector("#cancel-add-book");
+
+addBookButton.addEventListener("click", (event)=>{
+    bookTitleField.value = "";
+    bookSummaryField.value = "";
+
+    addBookForm.classList.remove("hidden");
+});
+
+cancelAddBookButton.addEventListener("click", (event)=>{
+    addBookForm.classList.add("hidden");
+});
+
+addBookForm.addEventListener("submit", (event)=>{
+    event.preventDefault();
+
+    addBook(
+        bookTitleField.value, 
+        bookSummaryField.value
+    );
+
+    addBookForm.classList.add("hidden");
+})

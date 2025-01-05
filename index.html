@@ -9,7 +9,7 @@
         <script src="script.js" defer></script>
     </head>
     <body>
-        <form class="modal hidden">
+        <form class="modal hidden" id="add-book-form">
             <div class="form-title">
                 <h2>Add book</h2>
                 <hr>
@@ -19,7 +19,7 @@
             <label for="summary">Summary</label>
             <textarea id="summary" rows="6"></textarea>
             <div class="form-actions">
-                <input type="button" value="Cancel">
+                <input type="button" value="Cancel" id="cancel-add-book">
                 <input type="submit" value="Add">
             </div>
         </form>
@@ -28,7 +28,7 @@
                 <h1>Library</h1>
             </header>
             <main>
-                <div class="book-button"><img src="images/add.svg" width="50%" height="50%"></div>
+                <button class="book-button" id="add-book"><img src="images/add.svg" width="50%" height="50%" alt="Add book"></button>
             </main>
         </div>
     </body>
