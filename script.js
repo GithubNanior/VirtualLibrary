@@ -8,6 +8,8 @@ function Book(title, content)
 
 function addBook(title, content)
 {
+    title = title.trim();
+
     if (findBook(title) != -1) 
     {
         return `Title "${title}" is already taken.`;
