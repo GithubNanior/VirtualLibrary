@@ -126,14 +126,13 @@ main {
 .book-actions {
     display: flex;
     justify-content: right;
-    gap: 10px;
 }
 
 .book-actions button {
     background-color: transparent;
     border: none;
-    width: 32px;
-    height: 32px;
+    width: 40px;
+    height: 40px;
 }
 
 .book-actions button:hover {
