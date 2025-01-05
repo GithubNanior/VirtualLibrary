@@ -1,3 +1,5 @@
+// Book data management
+
 let books = [];
 
 function Book(title, content)
@@ -40,6 +42,8 @@ function findBook(title)
 {
     return books.findIndex((book)=>book.title == title);
 }
+
+// Book ui management
 
 let bookContainer = document.querySelector("main");
 
@@ -93,6 +97,8 @@ function removeBookElement(title)
     bookContainer.removeChild(book);
 }
 
+// Register books
+
 addBook(
     "A sea apart", 
     `
@@ -145,6 +151,8 @@ addBook(
     There was once, a court jester, who farted songs from his behind. The jester had some real mad skills, and this story has some real weird truths, open this book to find out who, and where this old fart stunk the court!
     `
 );
+
+// Ui bindings
 
 let addBookForm = document.querySelector("#add-book-form");
 let bookTitleField = addBookForm.querySelector("#title");
