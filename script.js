@@ -1,5 +1,31 @@
+class Event
+{
+    #subscribers = [];
+
+    subscribe(subscriber)
+    {
+        this.#subscribers.push(subscriber);
+    }
+
+    unsubscribe(subscriber)
+    {
+        this.#subscribers.splice(this.#subscribers.indexOf(subscriber), 1);
+    }
+
+    invoke()
+    {
+        for (const subscriber of this.#subscribers) {
+            subscriber(...arguments);
+        }
+    }
+}
+
+
 const Database = (function(){
     let books = [];
+
+    const onBookAdd = new Event();
+    const onBookRemove = new Event();
 
     function Book(title, content)
     {
@@ -18,8 +44,7 @@ const Database = (function(){
         else
         {
             books.push(new Book(title, content));
-
-            Interface.addBookElement(title, content);
+            onBookAdd.invoke(title, content);
         }
     }
 
@@ -33,7 +58,7 @@ const Database = (function(){
         else
         {
             books.splice(index, 1);
-            Interface.removeBookElement(title);
+            onBookRemove.invoke(title);
         }
     }
 
@@ -44,13 +69,18 @@ const Database = (function(){
 
     return {
         addBook,
-        removeBook
+        removeBook,
+        onBookAdd,
+        onBookRemove
     }
 })();
 
 
 const Interface = (function(){
     let bookContainer = document.querySelector("main");
+
+    Database.onBookAdd.subscribe(addBookElement);
+    Database.onBookRemove.subscribe(removeBookElement);
 
     function addBookElement(title, summary)
     {
